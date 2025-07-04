@@ -64,7 +64,7 @@ export default function NavigationBar() {
       <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm sticky-top">
         <Container>
           <Navbar.Brand as={NavLink} to="/" className="brand-logo d-flex align-items-center">
-            <img src="/logo.png" alt="Cricket Realm" height="50" className="me-3 logo-img" />
+            <img src={`${process.env.PUBLIC_URL}/Favicon.png`} alt="Cricket Realm" height="40" className="me-3 logo-img" />
             Cricket Realm
           </Navbar.Brand>
 
