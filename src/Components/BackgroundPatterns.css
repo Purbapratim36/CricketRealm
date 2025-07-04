@@ -1,0 +1,43 @@
+.background-patterns {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pattern {
+  position: absolute;
+  opacity: 0.1;
+  transition: transform 10s linear;
+}
+
+.pattern.circle {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  box-shadow: 0 0 10px rgba(255, 140, 0, 0.1);
+}
+
+.pattern.line {
+  width: 100px;
+  height: 2px;
+  background: rgba(255, 140, 0, 0.2);
+  transform-origin: center;
+}
+
+.pattern.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 30px 60px 30px;
+  border-color: transparent transparent rgba(255, 140, 0, 0.15) transparent;
+}
+
+.pattern.wave {
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 140, 0, 0.15);
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.05);
+}

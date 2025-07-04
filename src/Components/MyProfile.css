@@ -1,0 +1,39 @@
+.profile-section {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1e5881 0%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  color: white;
+}
+
+.profile-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00ffcc;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #116b59;
+  text-align: center;
+  
+  max-width: 400px;
+  width: 100%;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
