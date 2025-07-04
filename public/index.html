@@ -27,6 +27,20 @@
     -->
     <title>Cricket Realm</title>
   </head>
+<script>
+  // Handle 404s for GitHub Pages when using React Router
+  (function () {
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect !== location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
+
+
+
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
