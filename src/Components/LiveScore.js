@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import './LiveScore.css';
 
@@ -78,10 +79,6 @@ export default function Livescore() {
               <span className="team-name">{getFlagImage(match.team2Abbr)} {match.team2Name}</span>
               <span className="score">{match.score2}</span>
             </div>
-            <div className="additional-info">
-              🏏 Batting: {match.battingTeam || '-'} | 
-              <img src="/cricket-ball.png" alt="Ball" className="ball-icon" /> Bowling: {match.bowlingTeam || '-'}
-            </div>
           </div>
         ))}
       </div>
@@ -91,28 +88,28 @@ export default function Livescore() {
 
 function getFlagImage(abbreviation) {
   const flagMap = {
-    IND: '/flags/india.png',
-    AUS: '/flags/australia.png',
-    ENG: '/flags/england.png',
-    PAK: '/flags/pakistan.png',
-    SL: '/flags/srilanka.png',
-    SA: '/flags/southafrica.png',
-    WI: '/flags/westindies.png',
-    BAN: '/flags/bangladesh.png',
-    NZ: '/flags/newzealand.png',
-    AFG: '/flags/afghanistan.png',
-    IRE: '/flags/ireland.png',
-    ZIM: '/flags/zimbabwe.png',
-    NAM: '/flags/namibia.png',
-    NED: '/flags/netherlands.png',
-    SCO: '/flags/scotland.png',
-    UAE: '/flags/uae.png',
-    USA: '/flags/usa.png',
-    OMN: '/flags/oman.png',
-    NEP: '/flags/nepal.png',
-    CAN: '/flags/canada.png'
+    IND: 'flags/india.png',
+    AUS: 'flags/australia.png',
+    ENG: 'flags/england.png',
+    PAK: 'flags/pk.png',
+    SL: 'flags/lk.png',
+    SA: 'flags/za.png',
+    WI: 'flags/westindies.png',
+    BAN: 'flags/bd.png',
+    NZ: 'flags/nz.png',
+    AFG: 'flags/afghanistan.png',
+    IRE: 'flags/ireland.png',
+    ZIM: 'flags/zimbabwe.png',
+    NAM: 'flags/namibia.png',
+    NED: 'flags/netherlands.png',
+    SCO: 'flags/scotland.png',
+    UAE: 'flags/uae.png',
+    USA: 'flags/us.png',
+    OMN: 'flags/oman.png',
+    NEP: 'flags/np.png',
+    CAN: 'flags/canada.png'
   };
 
-  const flagSrc = flagMap[abbreviation];
+  const flagSrc = flagMap[abbreviation] ? process.env.PUBLIC_URL + '/' + flagMap[abbreviation] : null;
   return flagSrc ? <img src={flagSrc} alt={abbreviation} className="flag-icon" /> : null;
 }
