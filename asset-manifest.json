@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/CricketRealm/static/css/main.e0649745.css",
+    "main.js": "/CricketRealm/static/js/main.63c454b3.js",
+    "static/js/453.03904038.chunk.js": "/CricketRealm/static/js/453.03904038.chunk.js",
+    "static/media/img1.jpg": "/CricketRealm/static/media/img1.375718868e57e98a2939.jpg",
+    "static/media/img5.jpg": "/CricketRealm/static/media/img5.01cad4901a077932b1bf.jpg",
+    "static/media/img3.jpg": "/CricketRealm/static/media/img3.fed8b14ecb06f38e686e.jpg",
+    "static/media/img7.jpg": "/CricketRealm/static/media/img7.b07af7b83f1aa2b9c10e.jpg",
+    "static/media/img4.jpg": "/CricketRealm/static/media/img4.11eb61df860b7035fc36.jpg",
+    "static/media/img2.jpg": "/CricketRealm/static/media/img2.c0c9d1c0c459565183b5.jpg",
+    "static/media/img6.jpg": "/CricketRealm/static/media/img6.124f8de4ea4b7b4bff7f.jpg",
+    "index.html": "/CricketRealm/index.html",
+    "main.e0649745.css.map": "/CricketRealm/static/css/main.e0649745.css.map",
+    "main.63c454b3.js.map": "/CricketRealm/static/js/main.63c454b3.js.map",
+    "453.03904038.chunk.js.map": "/CricketRealm/static/js/453.03904038.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0649745.css",
+    "static/js/main.63c454b3.js"
+  ]
+}
