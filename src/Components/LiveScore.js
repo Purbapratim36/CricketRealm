@@ -8,8 +8,9 @@ export default function Livescore() {
     fetch('https://cricbuzz-cricket.p.rapidapi.com/matches/v1/current', {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
-        'X-RapidAPI-Host': process.env.REACT_APP_RAPIDAPI_HOST
+       'x-atd-key': 'gnC1EKRMvEoLvqrtlGR2LnN3PxuBA9QP6mXJ8G9TCbJ0AVV0GS',
+        'x-apihub-host': 'Cricbuzz-Official-Cricket-API.allthingsdev.co',
+        'x-apihub-endpoint': '95df5edd-bd8b-4881-a12b-1a40e519b693'
       }
     })
       .then((res) => res.json())
