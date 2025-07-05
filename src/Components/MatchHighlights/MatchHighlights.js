@@ -34,9 +34,9 @@ export default function MatchHighlights() {
       });
   };
 
-  useEffect(() => {
-    fetchVideos();
-  }, []);
+ useEffect(() => {
+  fetchVideos();
+}, [fetchVideos]);
 
   const handleSearch = (e) => {
     e.preventDefault();
