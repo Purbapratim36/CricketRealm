@@ -1,4 +1,4 @@
-/* NavigationBar.css */
+
 
 .navbar {
   z-index: 999;
@@ -70,12 +70,13 @@
   color: #ffffff;
 }
 
-/* Sign Up button visible only on large screens */
+
 @media (max-width: 991px) {
   .btn.d-lg-block {
     display: none !important;
   }
 }
+
 
 @media (max-width: 576px) {
   .navbar .dropdown-toggle span {
