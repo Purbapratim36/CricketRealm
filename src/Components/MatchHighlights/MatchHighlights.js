@@ -3,28 +3,41 @@ import React, { useEffect, useState, useCallback } from 'react';
 const MatchHighlights = () => {
   const [videos, setVideos] = useState([]);
 
-  // ✅ Wrap fetchVideos in useCallback so it doesn't change every render
   const fetchVideos = useCallback(() => {
-    // Replace this with your actual fetching logic
-    fetch('https://example.com/videos')
+    const query = 'IPL 2025 match highlights';
+    const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
+
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&key=${apiKey}&maxResults=6`)
       .then((res) => res.json())
-      .then((data) => setVideos(data))
-      .catch((err) => console.error(err));
-  }, []); // Empty dependency ensures stable reference
+      .then((data) => {
+        setVideos(data.items || []);
+      })
+      .catch((err) => console.error("Failed to fetch videos:", err));
+  }, []);
 
   useEffect(() => {
-    fetchVideos(); // This is now safe
-  }, [fetchVideos]); // ✅ useEffect is happy now
+    fetchVideos();
+  }, [fetchVideos]);
 
   return (
     <div>
-      <h2>Match Highlights</h2>
-      {videos.map((video, index) => (
-        <div key={index}>
-          <h3>{video.title}</h3>
-          <video src={video.url} controls />
-        </div>
-      ))}
+      <h2>🎥 Match Highlights</h2>
+      <div className="highlight-grid">
+        {videos.map((video) => (
+          <div key={video.id.videoId} className="highlight-card">
+            <iframe
+              width="100%"
+              height="200"
+              src={`https://www.youtube.com/embed/${video.id.videoId}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title={video.snippet.title}
+            ></iframe>
+            <p>{video.snippet.title}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
