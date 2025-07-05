@@ -38,10 +38,6 @@ export default function NavigationBar() {
     return unsub;
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = showModal ? 'hidden' : 'auto';
-  }, [showModal]);
-
   const handleEmail = async e => {
     e.preventDefault();
     try {
@@ -65,15 +61,10 @@ export default function NavigationBar() {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm sticky-top" collapseOnSelect>
+      <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm sticky-top">
         <Container>
           <Navbar.Brand as={NavLink} to="/" className="brand-logo d-flex align-items-center">
-            <img
-              src={`${process.env.PUBLIC_URL}/Favicon.png`}
-              alt="Cricket Realm"
-              height="40"
-              className="me-3 logo-img"
-            />
+            <img src={`${process.env.PUBLIC_URL}/Favicon.png`} alt="Cricket Realm" height="40" className="me-3 logo-img" />
             Cricket Realm
           </Navbar.Brand>
 
@@ -110,17 +101,23 @@ export default function NavigationBar() {
                         width="32"
                         height="32"
                       />
-                      <span className="d-none d-md-inline text-truncate" style={{ maxWidth: '120px' }}>
+                      <span className="d-none d-lg-inline">
                         {user.displayName || user.email.split('@')[0]}
                       </span>
                     </>
                   }
                   align="end"
                 >
-                  <NavDropdown.Item as={NavLink} to="/profile">My Profile</NavDropdown.Item>
-                  <NavDropdown.Item as={NavLink} to="/my-teams">My Fantasy Teams</NavDropdown.Item>
+                  <NavDropdown.Item as={NavLink} to="/profile">
+                    My Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={NavLink} to="/my-teams">
+                    My Fantasy Teams
+                  </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleLogout}>
+                    Logout
+                  </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <>
@@ -187,20 +184,25 @@ export default function NavigationBar() {
               {isLogin ? 'Login' : 'Sign Up'}
             </Button>
           </Form>
+
           <div className="text-center mb-3">OR</div>
+
+          {/* Google login button with PNG logo */}
           <Button
             variant="outline-danger"
             className="w-100 d-flex align-items-center justify-content-center"
             onClick={signInWithGoogle}
           >
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              src={`${process.env.PUBLIC_URL}/google-logo.png`}
               alt="Google"
               width="20"
+              height="20"
               className="me-2"
             />
             Continue with Google
           </Button>
+
           <div className="text-center mt-3">
             <Button variant="link" onClick={() => setIsLogin(!isLogin)}>
               {isLogin ? 'Need an account? Sign up' : 'Already have an account? Login'}
