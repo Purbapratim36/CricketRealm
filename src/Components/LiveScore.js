@@ -10,7 +10,7 @@ export default function Livescore() {
       headers: {
        'x-atd-key': 'gnC1EKRMvEoLvqrtlGR2LnN3PxuBA9QP6mXJ8G9TCbJ0AVV0GS',
         'x-apihub-host': 'Cricbuzz-Official-Cricket-API.allthingsdev.co',
-        'x-apihub-endpoint': '95df5edd-bd8b-4881-a12b-1a40e519b693'
+        'x-apihub-endpoint': '5f260335-c228-4005-9eec-318200ca48d6'
       }
     })
       .then((res) => res.json())
