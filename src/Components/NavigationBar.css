@@ -1,8 +1,13 @@
 
 
-.navbar {
+
+  .navbar {
+  position: sticky;
+  top: 0;
   z-index: 999;
 }
+
+
 
 .logo-img {
   height: 40px;
